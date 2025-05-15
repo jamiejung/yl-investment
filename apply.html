@@ -25,16 +25,11 @@
 
       <section class="px-6 pb-8">
         <form
+          id="apply-form"
           action="https://formspree.io/f/xzzrykle"
           method="POST"
           class="space-y-6"
         >
-          <!-- 절대경로 _next -->
-          <input
-            type="hidden"
-            name="_next"
-            value="https://yl-investment.pages.dev/thank-you.html"
-          />
           <input type="hidden" name="_replyto" value="no-reply@yl-investment.com" />
 
           <div class="bg-gray-100 p-4 rounded">
@@ -97,5 +92,30 @@
     </div>
   </main>
 
+  <script>
+    document.getElementById('apply-form').addEventListener('submit', async e => {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+
+      try {
+        const res = await fetch(form.action, {
+          method: form.method,
+          headers: { 'Accept': 'application/json' },
+          body: data
+        });
+
+        if (res.ok) {
+          // 성공 시 강제 리다이렉트
+          window.location.href = 'thank-you.html';
+        } else {
+          alert('제출 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
+        }
+      } catch (err) {
+        console.error(err);
+        alert('제출 중 네트워크 오류가 발생했습니다.');
+      }
+    });
+  </script>
 </body>
 </html>
