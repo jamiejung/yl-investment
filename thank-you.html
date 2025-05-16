@@ -1,38 +1,32 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+  <meta charset="UTF-8" />
+  <title>신청 완료 – 감사합니다!</title>
+
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17085478412"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17085478412"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'AW-17085478412');
 
-  gtag('config', 'AW-17085478412');
-</script>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>신청 완료</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    // 전환 이벤트: 폼 제출 완료 시 전환으로 카운트
+    gtag('event', 'conversion', {
+      'send_to': 'AW-17085478412/80B1C1kimu8gaElzs_tI_'
+    });
+  </script>
+  
+  <!-- 기존 헤드 태그(스타일링 등)도 이 밑에 계속 이어붙이시면 됩니다 -->
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 2rem; }
+    h1 { color: #2a7ae2; }
+    p  { margin-top: 1rem; font-size: 1.1rem; }
+  </style>
 </head>
-<body class="bg-gray-100 font-sans">
-
-  <!-- 상단바 (apply와 동일) -->
-  <header class="fixed top-0 left-0 w-full bg-white shadow p-4 flex justify-between">
-    <div class="font-bold text-xl">YL투자</div>
-    <a href="index.html" class="text-blue-600 hover:underline">홈으로</a>
-  </header>
-
-  <main class="pt-24 flex flex-col items-center justify-center h-screen">
-    <h1 class="text-3xl font-bold mb-4">감사합니다!</h1>
-    <p class="text-lg text-gray-700">신청이 정상적으로 접수되었습니다.<br/>빠른 시일 내에 연락드리겠습니다.</p>
-  </main>
-<script>
-  // 페이지 로드 시 전환 이벤트 전송
-  gtag('event', 'conversion', {
-    'send_to': 'AW-17085478412/8OB1CKimu8gaElzs_tI-'  // 전환 ID / 전환 라벨
-  });
-</script>
-
+<body>
+  <h1>감사합니다!</h1>
+  <p>신청이 정상적으로 완료되었습니다.<br/>24시간 이내로 연락드리겠습니다.</p>
 </body>
 </html>
