@@ -13,14 +13,16 @@
       <span class="text-black">무료체험 신청</span>
     </h1>
 
+    <!-- Formspree 설정: 실제 Form ID 적용 및 절대 _next URL -->
     <form
       action="https://formspree.io/f/xzzrykle"
       method="POST"
+      data-sf-redirect="https://yl-investment.pages.dev/thank-you.html"
+      data-sf-captcha="false"
       class="space-y-6"
     >
-      <!-- Formspree redirect 설정: 반드시 .html 포함 -->
-      <input type="hidden" name="_next" value="https://yl-investment.pages.dev/thank-you.html" />
-      <input type="hidden" name="_captcha" value="false" />
+      <!-- 폼 제출 후 회신 받을 이메일(히든) -->
+      <input type="email" name="_replyto" hidden value="" />
 
       <div class="bg-green-50 border border-green-200 p-4 rounded-lg">
         <h2 class="font-medium text-gray-800 mb-2">개인정보 수집 및 이용동의</h2>
