@@ -13,15 +13,16 @@
       <span class="text-black">무료체험 신청</span>
     </h1>
 
-    <!-- Formspree 설정: 실제 Form ID 적용 및 절대 _next URL -->
+    <!-- Formspree 설정: 실제 Form ID 및 hidden _next 입력 사용 -->
     <form
       action="https://formspree.io/f/xzzrykle"
       method="POST"
-      data-sf-redirect="https://yl-investment.pages.dev/thank-you.html"
-      data-sf-captcha="false"
       class="space-y-6"
     >
-      <!-- 폼 제출 후 회신 받을 이메일(히든) -->
+      <!-- 리다이렉트 설정 -->
+      <input type="hidden" name="_next" value="https://yl-investment.pages.dev/thank-you.html" />
+      <input type="hidden" name="_captcha" value="false" />
+      <!-- 회신 이메일 (reply-to) -->
       <input type="email" name="_replyto" hidden value="" />
 
       <div class="bg-green-50 border border-green-200 p-4 rounded-lg">
@@ -41,28 +42,18 @@
         <label for="name" class="block text-sm font-medium text-gray-700">
           01. 성함을 기재해 주세요. <span class="text-red-500">*</span>
         </label>
-        <input
-          id="name"
-          name="name"
-          type="text"
-          required
-          placeholder="고객님의 소중한 성함을 기재해 주세요."
-          class="mt-1 block w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-        />
+        <input id="name" name="name" type="text" required
+               placeholder="고객님의 소중한 성함을 기재해 주세요."
+               class="mt-1 block w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" />
       </div>
 
       <div>
         <label for="phone" class="block text-sm font-medium text-gray-700">
           02. 전화번호를 기재해 주세요. <span class="text-red-500">*</span>
         </label>
-        <input
-          id="phone"
-          name="phone"
-          type="tel"
-          required
-          placeholder="연락받으실 전화번호를 기재해 주세요."
-          class="mt-1 block w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-        />
+        <input id="phone" name="phone" type="tel" required
+               placeholder="연락받으실 전화번호를 기재해 주세요."
+               class="mt-1 block w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" />
       </div>
 
       <div>
@@ -72,32 +63,23 @@
             본 사이트(이하 “회사”라 한다)는 고객님의 개인정보를 중요시하며,<br />
             “정보통신망 이용촉진 및 개인정보보호 등에 관한 법률” 등 관련 법령을 준수합니다.
           </p>
-          <button
-            type="button"
-            id="toggle-btn"
-            class="absolute bottom-2 right-2 text-sm text-green-600 hover:underline focus:outline-none"
-          >펼쳐보기</button>
+          <button type="button" id="toggle-btn"
+                  class="absolute bottom-2 right-2 text-sm text-green-600 hover:underline focus:outline-none">
+            펼쳐보기</button>
         </div>
       </div>
 
       <div class="flex items-center">
-        <input
-          id="agree"
-          name="agree"
-          type="checkbox"
-          class="h-4 w-4 text-green-600 border-gray-300 rounded"
-        />
+        <input id="agree" name="agree" type="checkbox"
+               class="h-4 w-4 text-green-600 border-gray-300 rounded" />
         <label for="agree" class="ml-2 text-sm text-gray-700">
           개인정보 수집 및 이용에 동의합니다.
         </label>
       </div>
 
-      <button
-        type="submit"
-        id="submit-btn"
-        disabled
-        class="w-full py-3 text-white font-medium rounded-lg bg-green-600 disabled:opacity-50 focus:outline-none focus:ring-2 focus:ring-green-500"
-      >제출하기</button>
+      <button type="submit" id="submit-btn" disabled
+              class="w-full py-3 text-white font-medium rounded-lg bg-green-600 disabled:opacity-50 focus:outline-none focus:ring-2 focus:ring-green-500">
+        제출하기</button>
     </form>
   </div>
 
