@@ -13,17 +13,13 @@
       <span class="text-black">무료체험 신청</span>
     </h1>
 
-    <!-- Formspree 기본 POST + hidden _next 사용 -->
     <form
-      action="https://formspree.io/f/xzzrykle"
-      method="POST"
+      action="https://formspree.io/f/xzzrykle"  method="POST"
       class="space-y-6"
     >
-      <!-- 제출 후 리다이렉트 -->
       <input type="hidden" name="_next" value="https://yl-investment.pages.dev/thank-you.html" />
-      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_captcha" value="false" /> <input type="email" name="_replyto" hidden value="" />
 
-      <!-- 개인정보 동의 안내 -->
       <div class="bg-green-50 border border-green-200 p-4 rounded-lg">
         <h2 class="font-medium text-gray-800 mb-2">개인정보 수집 및 이용동의</h2>
         <ul class="list-disc list-inside text-sm text-gray-700 space-y-1 mb-2">
@@ -37,37 +33,24 @@
         </p>
       </div>
 
-      <!-- 성함 필드 -->
       <div>
         <label for="name" class="block text-sm font-medium text-gray-700">
           01. 성함을 기재해 주세요. <span class="text-red-500">*</span>
         </label>
-        <input
-          id="name"
-          name="name"
-          type="text"
-          required
-          placeholder="고객님의 소중한 성함을 기재해 주세요."
-          class="mt-1 block w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-        />
+        <input id="name" name="name" type="text" required
+               placeholder="고객님의 소중한 성함을 기재해 주세요."
+               class="mt-1 block w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" />
       </div>
 
-      <!-- 전화번호 필드 -->
       <div>
         <label for="phone" class="block text-sm font-medium text-gray-700">
           02. 전화번호를 기재해 주세요. <span class="text-red-500">*</span>
         </label>
-        <input
-          id="phone"
-          name="phone"
-          type="tel"
-          required
-          placeholder="연락받으실 전화번호를 기재해 주세요."
-          class="mt-1 block w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-        />
+        <input id="phone" name="phone" type="tel" required
+               placeholder="연락받으실 전화번호를 기재해 주세요."
+               class="mt-1 block w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" />
       </div>
 
-      <!-- 개인정보 취급방침 펼쳐보기 -->
       <div>
         <div class="relative border border-gray-300 rounded-lg p-4 h-36 overflow-hidden">
           <p id="policy-text" class="text-xs text-gray-600 whitespace-pre-line">
@@ -75,34 +58,23 @@
             본 사이트(이하 “회사”라 한다)는 고객님의 개인정보를 중요시하며,<br />
             “정보통신망 이용촉진 및 개인정보보호 등에 관한 법률” 등 관련 법령을 준수합니다.
           </p>
-          <button
-            type="button"
-            id="toggle-btn"
-            class="absolute bottom-2 right-2 text-sm text-green-600 hover:underline focus:outline-none"
-          >펼쳐보기</button>
+          <button type="button" id="toggle-btn"
+                  class="absolute bottom-2 right-2 text-sm text-green-600 hover:underline focus:outline-none">
+            펼쳐보기</button>
         </div>
       </div>
 
-      <!-- 동의 체크박스 -->
       <div class="flex items-center">
-        <input
-          id="agree"
-          name="agree"
-          type="checkbox"
-          class="h-4 w-4 text-green-600 border-gray-300 rounded"
-        />
+        <input id="agree" name="agree" type="checkbox"
+               class="h-4 w-4 text-green-600 border-gray-300 rounded" />
         <label for="agree" class="ml-2 text-sm text-gray-700">
           개인정보 수집 및 이용에 동의합니다.
         </label>
       </div>
 
-      <!-- 제출 버튼 -->
-      <button
-        type="submit"
-        id="submit-btn"
-        disabled
-        class="w-full py-3 text-white font-medium rounded-lg bg-green-600 disabled:opacity-50 focus:outline-none focus:ring-2 focus:ring-green-500"
-      >제출하기</button>
+      <button type="submit" id="submit-btn" disabled
+              class="w-full py-3 text-white font-medium rounded-lg bg-green-600 disabled:opacity-50 focus:outline-none focus:ring-2 focus:ring-green-500">
+        제출하기</button>
     </form>
   </div>
 
