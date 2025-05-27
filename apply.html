@@ -13,14 +13,17 @@
       <span class="text-black">무료체험 신청</span>
     </h1>
 
-    <!-- Formspree v2 연동: data-sf-redirect와 data-sf-captcha 사용 -->
+    <!-- Formspree 기본 POST + hidden _next 사용 -->
     <form
       action="https://formspree.io/f/xzzrykle"
       method="POST"
-      data-sf-redirect="https://yl-investment.pages.dev/thank-you.html"
-      data-sf-captcha="false"
       class="space-y-6"
     >
+      <!-- 제출 후 리다이렉트 -->
+      <input type="hidden" name="_next" value="https://yl-investment.pages.dev/thank-you.html" />
+      <input type="hidden" name="_captcha" value="false" />
+
+      <!-- 개인정보 동의 안내 -->
       <div class="bg-green-50 border border-green-200 p-4 rounded-lg">
         <h2 class="font-medium text-gray-800 mb-2">개인정보 수집 및 이용동의</h2>
         <ul class="list-disc list-inside text-sm text-gray-700 space-y-1 mb-2">
@@ -34,6 +37,7 @@
         </p>
       </div>
 
+      <!-- 성함 필드 -->
       <div>
         <label for="name" class="block text-sm font-medium text-gray-700">
           01. 성함을 기재해 주세요. <span class="text-red-500">*</span>
@@ -48,6 +52,7 @@
         />
       </div>
 
+      <!-- 전화번호 필드 -->
       <div>
         <label for="phone" class="block text-sm font-medium text-gray-700">
           02. 전화번호를 기재해 주세요. <span class="text-red-500">*</span>
@@ -62,6 +67,7 @@
         />
       </div>
 
+      <!-- 개인정보 취급방침 펼쳐보기 -->
       <div>
         <div class="relative border border-gray-300 rounded-lg p-4 h-36 overflow-hidden">
           <p id="policy-text" class="text-xs text-gray-600 whitespace-pre-line">
@@ -77,6 +83,7 @@
         </div>
       </div>
 
+      <!-- 동의 체크박스 -->
       <div class="flex items-center">
         <input
           id="agree"
@@ -89,6 +96,7 @@
         </label>
       </div>
 
+      <!-- 제출 버튼 -->
       <button
         type="submit"
         id="submit-btn"
